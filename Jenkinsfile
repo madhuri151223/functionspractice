@@ -17,6 +17,17 @@ def environments = ["Development",
           deployapp(services[0],environments[0])
           deployapp(services[1],environments[1])
           deployapp(services[2],environments[2])
+
+        try { 
+          echo "Starting QA deployment → force failure"
+        }
+        catch(exception e){
+          echo "QA failure handled"
+        }
+        finally {
+          echo "QA cleanup completed"
+        }
+          
         }
       }
     }
