@@ -12,7 +12,8 @@ def environments = ["Development",
                     "QA",
                     "Production"]
         def deployapp = {service,environment -> 
-                       echo "deploying ${service} to ${environment}}
+                       echo "deploying ${service} to ${environment}"
+        }
           deployapp(services[0],environments[0])
           deployapp(services[1],environments[1])
           deployapp(services[2],environments[2])
