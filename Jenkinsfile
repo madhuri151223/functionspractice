@@ -24,6 +24,7 @@ def environments = ["Development",
         }
         catch(Exception e){
           echo "QA failure handled"
+          currentBuild.result = 'FAILURE'
         }
         finally {
           echo "QA cleanup completed"
