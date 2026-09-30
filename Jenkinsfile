@@ -19,9 +19,10 @@ def environments = ["Development",
           deployapp(services[2],environments[2])
 
         try { 
-          echo "Starting QA deployment → force failure"
+          echo "Starting QA deployment"
+          error ("QA deployment failed")
         }
-        catch(exception e){
+        catch(Exception e){
           echo "QA failure handled"
         }
         finally {
