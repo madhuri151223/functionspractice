@@ -29,7 +29,12 @@ def environments = ["Development",
         finally {
           echo "QA cleanup completed"
         }
-          
+
+        catchError(buildResult: 'FAILURE', stageResult: 'FAILURE'){
+        echo "starting test"
+        error("test failed")
+        }
+        
         }
       }
     }
